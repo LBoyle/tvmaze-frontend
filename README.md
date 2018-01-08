@@ -24,3 +24,5 @@ Using react-router-dom and history.
 Skeleton doesn't have a navbar so I'll have to make one, and responsive. 
 
 Just two main views for now. 
+
+Planning, examining the json data, drawing component trees.
