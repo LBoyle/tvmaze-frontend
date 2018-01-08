@@ -9,6 +9,7 @@ Tech test - Consume the tvmaze API using React
 
 # Techs used
 - React
+- react-router-dom and history
 - axios
 - skeleton.css
 
@@ -18,3 +19,8 @@ Used create-react-app to start a project.
 
 Import normalize and skeleton.
 
+Using react-router-dom and history. 
+
+Skeleton doesn't have a navbar so I'll have to make one, and responsive. 
+
+Just two main views for now. 
