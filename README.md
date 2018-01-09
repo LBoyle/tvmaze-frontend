@@ -1,19 +1,24 @@
 # tvmaze-frontend
 Tech test - Consume the tvmaze API using React
 
-# Tools used
+### Rota
+- Monday 8th - 2 hours. 
+
+### Tools used
 - Atom 
 - Insomnia REST client
 - Will try the chrome extensions
 - ZSH
 
-# Techs used
+### Techs used
 - React
 - react-router-dom and history
 - axios
 - skeleton.css
 
-# Development Chonology
+## Development Chonology
+
+**Monday 8th**
 
 Used create-react-app to start a project. 
 
