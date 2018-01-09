@@ -1,6 +1,26 @@
 # tvmaze-frontend
 Tech test - Consume the tvmaze API using React
 
+# Setup
+- Clone repo
+- yarn is recommended  ```npm install -g yarn```
+- Install packages ```yarn```
+- Open two terminal windows in the project root, one for sass, one for React
+
+yarn scripts:
+
+```
+
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "eject": "react-scripts eject",
+  "sass": "node-sass src/styles/scss/*.scss --output src/styles/css --source-map-embed --source-map-contents --output-style compressed",
+  "sass:watch": "yarn sass --watch"
+}
+
+```
+
 ### Rota
 - Monday 8th - 2 hours.
 - Tuesday 9th - 1 hour.
@@ -16,6 +36,7 @@ Tech test - Consume the tvmaze API using React
 - react-router-dom and history
 - axios
 - skeleton.css
+- node-sass
 
 ## Development Chonology
 
@@ -37,4 +58,4 @@ Planning, examining the json data, drawing component trees.
 
 Made basic somewhat responsive navbar.
 
-Installed and setup node-sass for watch. 
+Installed and setup node-sass for watch.
