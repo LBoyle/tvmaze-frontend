@@ -1,13 +1,18 @@
 # tvmaze-frontend
 Tech test - Consume the tvmaze API using React
 
-# Setup
+### Setup
 - Clone repo
 - yarn is recommended  ```npm install -g yarn```
 - Install packages ```yarn```
 - Open two terminal windows in the project root
 - One for sass ```yarn sass:watch```
 - One for React ```yarn start```
+
+### Build for prod
+- Run ```yarn sass``` first to compile sass
+- Run ```yarn build``` to package the whole thing
+- I use http-server from npm to test prod build ```http-server build```
 
 ```
 
