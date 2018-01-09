@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 import './styles/normalize.css';
 import './styles/skeleton.css';
+import './styles/index.css';
 
 ReactDOM.render(
   <Router history={createBrowserHistory(this.props)}>
