@@ -8,9 +8,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavigationBar />
-        <Switch>
-          <Route path="/" component={Home} />
-        </Switch>
+        <div className="Main">
+          <Switch>
+            <Route path="/" component={Home} />
+          </Switch>
+        </div>
       </div>
     );
   }
