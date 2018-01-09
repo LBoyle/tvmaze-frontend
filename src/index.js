@@ -5,8 +5,6 @@ import { createBrowserHistory } from 'history';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import './styles/css/normalize.css';
-import './styles/css/skeleton.css';
 import './styles/css/index.css';
 
 ReactDOM.render(
