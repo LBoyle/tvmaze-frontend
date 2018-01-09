@@ -5,9 +5,9 @@ import { createBrowserHistory } from 'history';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import './styles/normalize.css';
-import './styles/skeleton.css';
-import './styles/index.css';
+import './styles/css/normalize.css';
+import './styles/css/skeleton.css';
+import './styles/css/index.css';
 
 ReactDOM.render(
   <Router history={createBrowserHistory(this.props)}>
