@@ -5,9 +5,9 @@ Tech test - Consume the tvmaze API using React
 - Clone repo
 - yarn is recommended  ```npm install -g yarn```
 - Install packages ```yarn```
-- Open two terminal windows in the project root, one for sass, one for React
-
-yarn scripts:
+- Open two terminal windows in the project root
+- One for sass ```yarn sass:watch```
+- One for React ```yarn start```
 
 ```
 
