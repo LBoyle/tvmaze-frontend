@@ -6,7 +6,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "sass": "node-sass src/styles/scss/*.scss --output src/styles/css --source-map-embed --source-map-contents --output-style compressed",
+    "sass": "node-sass src/styles/scss/index.scss --output src/styles/css --source-map-embed --source-map-contents --output-style compressed",
     "sass:watch": "yarn sass --watch"
   },
   "dependencies": {
