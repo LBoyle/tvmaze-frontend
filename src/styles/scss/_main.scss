@@ -29,6 +29,12 @@ html, body, #root, .App {
 #mobile-nav, #mobile-nav-items {
   display: none;
 }
+.listItem {
+  list-style-type: none;
+  hr {
+    margin: 0 0 1rem 0;
+  }
+}
 
 @media (max-width: 600px) and (orientation: portrait) {
   html, body, #root, #app {

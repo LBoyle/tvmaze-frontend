@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 import ListItem from './common/ListItem';
@@ -19,7 +18,7 @@ class Home extends React.Component {
   getTodaySchedule() {
     axios.get('http://api.tvmaze.com/schedule?country=US&date=2018-01-10')
       .then(res => {
-        return res.data.map(item => <ListItem item={item} key={item.id} />);
+        return res.data.map(item => <ListItem item={ item } key={ item.id } />);
       })
       .then(items => this.setState({ data: items }))
       .catch(err => {
@@ -30,7 +29,7 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <h3>Todays Schedule</h3>
-        <ul id="res-list">{this.state.data}</ul>
+        <ul id="res-list">{ this.state.data }</ul>
       </div>
     );
   }
