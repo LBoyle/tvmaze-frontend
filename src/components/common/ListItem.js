@@ -29,12 +29,12 @@ class ListItem extends React.Component {
         <div className="row" style={{display: 'none'}}>
           <div className="three columns">{
             this.state.item.show.image ?
-              <img src={ this.state.item.show.image.medium }></img> :
+              <img src={ this.state.item.show.image.medium } alt={ this.state.item.name }></img> :
               <p>No image provided</p>
           }</div>
           <div className="nine columns">
             <h5>
-              <Link to='/show' showurl={ this.state.item.show._links.self }>
+              <Link to={'/show/' + this.state.item.id}>
                 { this.state.item.show.name }
               </Link>
             </h5>

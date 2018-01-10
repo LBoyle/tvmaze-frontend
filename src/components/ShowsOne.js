@@ -1,11 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import axios from 'axios';
 
 class ShowsOne extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
-    this.state = {};
+
+    this.state = {
+      showId: props.location.pathname.split('/')[2],
+      data: {}
+    };
+  }
+  componentWillMount() {
+    this.getShow();
+  }
+  getShow() {
+    axios.get(`http://api.tvmaze.com/shows/${this.state.showId}`)
+      .then(res => this.setState({ data: res }, () => console.log(this.state)))
+      .catch(err => {
+        this.setState({ errors: err }, () => console.log(this.state));
+      });
   }
   render() {
     return (
@@ -14,10 +27,6 @@ class ShowsOne extends React.Component {
       </div>
     );
   }
-}
-
-ShowsOne.propTypes = {
-  showurl: PropTypes.object
 }
 
 export default ShowsOne;
