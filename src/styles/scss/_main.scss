@@ -1,5 +1,6 @@
 html, body, #root, #app {
   min-height: 100vh;
+  height: 100%;
   width: 100vw;
 }
 .Nav, .Main {
@@ -10,10 +11,12 @@ html, body, #root, #app {
 .Main {
   width: 75vw;
   min-height: 100vh;
+  height: 100%;
 }
 .Nav {
   width: 25vw;
   min-height: 100vh;
+  height: 100%;
   background-color: grey;
 }
 .Nav ul {

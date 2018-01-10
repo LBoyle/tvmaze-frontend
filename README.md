@@ -29,6 +29,7 @@ Tech test - Consume the tvmaze API using React
 ### Rota
 - Monday 8th - 2 hours.
 - Tuesday 9th - 1 hour.
+- Wednesday 10th - .
 
 ### Tools used
 - Atom
@@ -64,3 +65,5 @@ Planning, examining the json data, drawing component trees.
 Made basic somewhat responsive navbar.
 
 Installed and setup node-sass for watch.
+
+**Wednesday 10th**
