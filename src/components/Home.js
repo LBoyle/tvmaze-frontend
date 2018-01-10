@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
-import ListItem from './ListItem';
+import ListItem from './common/ListItem';
 
 class Home extends React.Component {
   constructor(props) {

@@ -29,7 +29,7 @@ Tech test - Consume the tvmaze API using React
 ### Rota
 - Monday 8th - 2 hours.
 - Tuesday 9th - 1 hour.
-- Wednesday 10th - 2 hours.
+- Wednesday 10th - 3 hours.
 
 ### Tools used
 - Atom
@@ -69,3 +69,7 @@ Installed and setup node-sass for watch.
 **Wednesday 10th**
 
 Made request using axios and promise chain.
+
+Displayed in a list, had trouble with state management, but I was overcomplicating it.
+
+Created the common component ListItem which will be reused.
