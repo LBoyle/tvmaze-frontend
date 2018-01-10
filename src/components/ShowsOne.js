@@ -6,7 +6,7 @@ class ShowsOne extends React.Component {
     super(props);
 
     this.state = {
-      showId: props.location.pathname.split('/')[2],
+      showUrl: props.location.pathname,
       data: {}
     };
   }
@@ -14,21 +14,43 @@ class ShowsOne extends React.Component {
     this.getShow();
   }
   getShow() {
-    axios.get(`http://api.tvmaze.com/shows/${this.state.showId}`)
-      .then(res => this.setState({ data: res }, () => console.log(this.state)))
+    axios.get(`http://api.tvmaze.com${this.state.showUrl}`)
+      .then(res => this.setState({ data: res.data }, () => console.log(this.state)))
       .catch(err => {
         this.setState({ errors: err }, () => console.log(this.state));
       });
   }
   render() {
     return (
-      <div>
-        <h3>Single Show</h3>
+      <div className="container">
+
+        <div className="row">
+          <div className="three columns">{
+            this.state.data.image ?
+              <img src={this.state.data.image.medium} alt={this.state.data.name}></img> :
+              <p>No image provided</p>
+          }</div>
+          <div className="nine columns">
+            <h3>{ this.state.data.name }</h3>
+            <div dangerouslySetInnerHTML={{ __html: this.state.data.summary }}></div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="three columns">{
+            this.state.data.image ?
+              <img src={this.state.data.image.medium} alt={this.state.data.name}></img> :
+              <p>No image provided</p>
+          }</div>
+          <div className="nine columns">
+            <h3>{ this.state.data.name }</h3>
+            <div dangerouslySetInnerHTML={{ __html: this.state.data.summary }}></div>
+          </div>
+        </div>
+        
       </div>
     );
   }
 }
 
 export default ShowsOne;
-
-// <div dangerouslySetInnerHTML={{ __html: this.state.item.show.summary }}></div>

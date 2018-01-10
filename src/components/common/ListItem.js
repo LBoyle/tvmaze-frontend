@@ -34,7 +34,7 @@ class ListItem extends React.Component {
           }</div>
           <div className="nine columns">
             <h5>
-              <Link to={'/show/' + this.state.item.id}>
+              <Link to={`/shows/${this.state.item.show.id}`}>
                 { this.state.item.show.name }
               </Link>
             </h5>
