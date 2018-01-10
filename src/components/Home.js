@@ -29,7 +29,7 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <h3>Todays Schedule</h3>
-        <ul id="res-list">{ this.state.data }</ul>
+        <div id="res-list">{ this.state.data }</div>
       </div>
     );
   }

@@ -20,7 +20,7 @@ class ListItem extends React.Component {
   }
   render() {
     return (
-      <li className="listItem container">
+      <div className="listItem container">
         { this.state.item.airdate }&nbsp;:&nbsp;
         { this.state.item.airtime }&nbsp;:&nbsp;
         { this.state.item.show.name }&nbsp;-&nbsp;
@@ -42,7 +42,7 @@ class ListItem extends React.Component {
         </div>
 
         <hr />
-      </li>
+      </div>
     );
   }
 }
