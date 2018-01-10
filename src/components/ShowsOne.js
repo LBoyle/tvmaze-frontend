@@ -7,7 +7,8 @@ class ShowsOne extends React.Component {
 
     this.state = {
       showUrl: props.location.pathname,
-      data: {}
+      show: {},
+      cast: {}
     };
   }
   componentWillMount() {
@@ -15,7 +16,15 @@ class ShowsOne extends React.Component {
   }
   getShow() {
     axios.get(`http://api.tvmaze.com${this.state.showUrl}`)
-      .then(res => this.setState({ data: res.data }, () => console.log(this.state)))
+      .then(res => this.setState({ show: res.data }, () => console.log(this.state)))
+      .catch(err => {
+        this.setState({ errors: err }, () => console.log(this.state));
+      });
+  }
+  getCast() {
+    http://api.tvmaze.com/shows/1/crew
+    axios.get(`http://api.tvmaze.com${this.state.showUrl}`)
+      .then(res => this.setState({ cast: res.data }, () => console.log(this.state)))
       .catch(err => {
         this.setState({ errors: err }, () => console.log(this.state));
       });
@@ -26,28 +35,28 @@ class ShowsOne extends React.Component {
 
         <div className="row">
           <div className="three columns">{
-            this.state.data.image ?
-              <img src={this.state.data.image.medium} alt={this.state.data.name}></img> :
+            this.state.show.image ?
+              <img src={this.state.show.image.medium} alt={this.state.show.name}></img> :
               <p>No image provided</p>
           }</div>
           <div className="nine columns">
-            <h3>{ this.state.data.name }</h3>
-            <div dangerouslySetInnerHTML={{ __html: this.state.data.summary }}></div>
+            <h3>{ this.state.show.name }</h3>
+            <div dangerouslySetInnerHTML={{ __html: this.state.show.summary }}></div>
           </div>
         </div>
 
         <div className="row">
           <div className="three columns">{
-            this.state.data.image ?
-              <img src={this.state.data.image.medium} alt={this.state.data.name}></img> :
+            this.state.show.image ?
+              <img src={this.state.show.image.medium} alt={this.state.show.name}></img> :
               <p>No image provided</p>
           }</div>
           <div className="nine columns">
-            <h3>{ this.state.data.name }</h3>
-            <div dangerouslySetInnerHTML={{ __html: this.state.data.summary }}></div>
+            <h3>{ this.state.show.name }</h3>
+            <div dangerouslySetInnerHTML={{ __html: this.state.show.summary }}></div>
           </div>
         </div>
-        
+
       </div>
     );
   }
