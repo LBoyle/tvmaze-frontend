@@ -30,6 +30,9 @@ class ShowsOne extends React.Component {
       });
   }
   render() {
+    const showDays = this.state.data.schedule ?
+      this.state.data.schedule.days.map(day => <li key={ day }>{ day }</li>) :
+      null;
     return (
       <div className="container">
 
@@ -46,6 +49,7 @@ class ShowsOne extends React.Component {
         </div>
 
         <div className="row">
+<<<<<<< HEAD
           <div className="three columns">{
             this.state.show.image ?
               <img src={this.state.show.image.medium} alt={this.state.show.name}></img> :
@@ -54,6 +58,19 @@ class ShowsOne extends React.Component {
           <div className="nine columns">
             <h3>{ this.state.show.name }</h3>
             <div dangerouslySetInnerHTML={{ __html: this.state.show.summary }}></div>
+=======
+          <div className="three columns">
+            {
+              this.state.data.network ?
+                <p>{ this.state.data.network.name } : { this.state.data.network.country.timezone }</p> :
+                null
+            }
+            <p>Shows at { this.state.data.schedule ? this.state.data.schedule.time : null } on:</p>
+            <ul>{ showDays }</ul>
+          </div>
+          <div className="nine columns">
+
+>>>>>>> f7e1535e55ac7c3dff21ad3a00cc2eba1fa589e9
           </div>
         </div>
 
