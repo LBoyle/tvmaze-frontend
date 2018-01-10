@@ -16,7 +16,7 @@ class Home extends React.Component {
   getTodaySchedule() {
     axios.get('http://api.tvmaze.com/schedule?country=US&date=2018-01-10')
       .then(res => {
-        return res.data.map(item => <li>{item.id}: {item.name}</li>);
+        return res.data.map(item => <li key={item.id}>{item.airdate}: {item.airtime}: {item.name}</li>);
       })
       .then(items => {
         this.setState({ data: items }, () => {

@@ -1,7 +1,6 @@
-html, body, #root, #app {
+html, body, #root, .App {
   min-height: 100vh;
-  height: 100%;
-  width: 100vw;
+  width: 98vw;
 }
 .Nav, .Main {
   float: left;
@@ -9,15 +8,15 @@ html, body, #root, #app {
   padding: 2em;
 }
 .Main {
-  width: 75vw;
+  width: 73vw;
   min-height: 100vh;
-  height: 100%;
+  margin-left: 25vw;
 }
 .Nav {
   width: 25vw;
   min-height: 100vh;
-  height: 100%;
   background-color: grey;
+  position: fixed;
 }
 .Nav ul {
   list-style-type: none;
@@ -32,6 +31,9 @@ html, body, #root, #app {
 }
 
 @media (max-width: 600px) and (orientation: portrait) {
+  html, body, #root, #app {
+    width: 100vw;
+  }
   .Nav, .Main {
     width: 100%;
     padding: 1em;
@@ -43,6 +45,7 @@ html, body, #root, #app {
   .Main {
     min-height: 90vh;
     clear: both;
+    margin: 0;
   }
   #desktop-nav {
     display: none;
