@@ -21,11 +21,6 @@ class NavigationBar extends React.Component {
       this.mobileNavItems.style.display = this.state.menuOpen ? 'block' : 'none';
     });
   }
-  update() {
-    this.forceUpdate(() => {
-      console.log('updated');
-    });
-  }
   render() {
     return (
       <nav className="Nav" id="nav-container">
