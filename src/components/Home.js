@@ -8,7 +8,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.updatePage = this.updatePage.bind(this);
     this.state = {
       data: [],
       errors: {}
@@ -27,16 +26,10 @@ class Home extends React.Component {
         this.setState({ errors: err }, () => console.log(this.state));
       });
   }
-  updatePage() {
-    const newData = this.state.data;
-    newData.splice(0, 1);
-    this.setState({ data: newData });
-  }
   render() {
     return (
       <div className="Home">
         <h3>Todays Schedule</h3>
-        <button onClick={this.updatePage}>remove first item</button>
         <ul id="res-list">{this.state.data}</ul>
       </div>
     );
