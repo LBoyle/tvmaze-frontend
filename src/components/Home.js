@@ -30,7 +30,7 @@ class Home extends React.Component {
   updatePage() {
     const newData = this.state.data;
     newData.splice(0, 1);
-    this.setState({ data: newData }, () => this.forceUpdate());
+    this.setState({ data: newData });
   }
   render() {
     return (
