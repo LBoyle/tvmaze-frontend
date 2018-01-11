@@ -25,7 +25,8 @@ const deleteFavouriteEpisode = (item, c) => {
   if(localStorage.getItem('favouriteEpisodes')) {
     current = JSON.parse(localStorage.getItem('favouriteEpisodes')).data;
     current.splice(current.indexOf(item), 1);
-    localStorage.setItem('favouriteEpisodes', JSON.stringify({ data: current }), () => c());
+    localStorage.setItem('favouriteEpisodes', JSON.stringify({ data: current }));
+    c();
   } else {
     console.log('No favouriteEpisodes object');
   }

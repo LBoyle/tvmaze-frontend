@@ -13,7 +13,6 @@ class ListItemEp extends React.Component {
     // internal
     this.clickHandler = this.clickHandler.bind(this);
     this.addFavEpisode = this.addFavEpisode.bind(this);
-    // this.deleteFavEpisode = this.deleteFavEpisode.bind(this);
     this.state = {
       isOpen: false,
       episode: props.episode
@@ -47,7 +46,7 @@ class ListItemEp extends React.Component {
         {
           this.state.episode.show ?
             <button onClick={ this.clickHandler }>{ this.state.isOpen ? 'Hide' : 'Show' }</button> :
-            <button onClick={ this.props.delHandler }>Remove</button>
+            <button onClick={ this.props.delHandler } value={ this.state.episode.id }>Remove</button>
         }
 
         <div className="row" style={{display: 'none'}}>

@@ -20,7 +20,7 @@ const addToFavouriteShows = item => {
     }
 }
 
-const deleteFavouriteShow = item => {
+const deleteFavouriteShow = (item, c) => {
   let current;
   if(localStorage.getItem('favouriteShows')) {
     current = JSON.parse(localStorage.getItem('favouriteShows')).data;
@@ -28,6 +28,7 @@ const deleteFavouriteShow = item => {
     current.splice(current.indexOf(item), 1);
     console.log(current);
     localStorage.setItem('favouriteShows', JSON.stringify({ data: current }));
+    c();
   } else {
     console.log('No favouriteShows object');
   }

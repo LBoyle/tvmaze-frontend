@@ -65,3 +65,4 @@ Tech test - Consume the tvmaze API using React
 - Don't need prop-types so far.
 - Made favourites page, stored favourite shows in localStorage using JSON.stringify().
 - Reorganized component library. Next I'll add favourite episodes.
+- Can't refresh after delete item from favourites, working on it. 
