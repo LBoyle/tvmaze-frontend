@@ -16,7 +16,8 @@ class Home extends React.Component {
       date: this.makeDate(),
       data: [],
       errors: {},
-      filterName: ''
+      filterName: '',
+      filterTime: ''
     };
   }
   makeDate() {
@@ -45,8 +46,11 @@ class Home extends React.Component {
     console.log('not done yet');
   }
   render() {
-    let filteredResults = this.state.data.filter(item => {
+    let filteredResults =
+      this.state.data.filter(item => {
         return item.props.item.show.name.toLowerCase().indexOf(this.state.filterName.toLowerCase()) !== -1;
+      }).filter(item => {
+        return item.props.item.airtime.indexOf(this.state.filterTime) !== -1;
       });
     return (
       <div className="Home">
@@ -64,6 +68,7 @@ class Home extends React.Component {
         </form>
         <div className="row" id="filters-box">
           <input className="four columns" id="filterName" name="filterName" type="text" placeholder="Name of show" value={ this.state.filterName } onChange={ this.onChange } />
+          <input className="four columns" id="filterTime" name="filterTime" type="text" placeholder="Airtime" value={ this.state.filterTime } onChange={ this.onChange } />
         </div>
         <div className="row" id="res-list">{ filteredResults }</div>
       </div>
