@@ -16,7 +16,7 @@ class Favourites extends React.Component {
     };
   }
   componentWillMount() {
-    if(localStorage.favouriteShows || localStorage.favouriteEps) this.updateFavs();
+    this.updateFavs();
   }
   updateFavs() {
     this.setState({ favShows: getFavouriteShows() });
@@ -29,12 +29,12 @@ class Favourites extends React.Component {
     deleteFavouriteEpisode(e.target.value, () => this.updateFavs());
   }
   render() {
-    const favShows = this.state.favShows.data ?
+    const favShows = this.state.favShows.data.length > 0 ?
       this.state.favShows.data.map(show => {
         return <ListItemShow show={ show } key={ show } delHandler={ this.showDelHandler } />;
       }) : <li>No Favourite Shows</li>;
 
-    const favEpisodes = this.state.favEps.data ?
+    const favEpisodes = this.state.favEps.data.length > 0 ?
       this.state.favEps.data.map(episode => {
         return <ListItemEp episode={ episode } key={ episode } delHandler={ this.epDelHandler } parent="favs" />;
       }) : <li>No Favourite Episodes</li>;
