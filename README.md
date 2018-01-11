@@ -33,18 +33,21 @@ Unfortunately heroku has blocked the tvmaze api because it doesn't use https. I 
 
 ```
 
-### Rota
-- Monday 8th - 2 hours.
-- Tuesday 9th - 1 hour.
-- Wednesday 10th - 4 hours.
-- Thursday 11th - 5 hours.
-
 ### Techs used
 - React
 - react-router-dom and history
 - axios
 - skeleton.css
 - node-sass
+
+### Rota
+- Monday 8th - 2 hours.
+- Tuesday 9th - 1 hour.
+- Wednesday 10th - 4 hours.
+- Thursday 11th - 5 hours.
+
+### Notes
+- I installed heroku-cli in the project and run it with a yarn script, Ubuntu security prevented me from installing it globally, so ```yarn heroku [some command]```
 
 ## Development Chonology
 
