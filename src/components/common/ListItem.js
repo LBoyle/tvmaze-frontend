@@ -47,8 +47,4 @@ class ListItem extends React.Component {
   }
 }
 
-ListItem.propTypes = {
-  item: PropTypes.object
-}
-
 export default ListItem;

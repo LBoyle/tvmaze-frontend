@@ -1,5 +1,4 @@
 import React from 'react';
-// import axios from 'axios';
 import getShow from '../actions/getShow';
 import getCastByShow from '../actions/getCastByShow';
 
@@ -9,38 +8,32 @@ class ShowsOne extends React.Component {
 
     this.getShow = getShow.bind(this);
     this.getCastByShow = getCastByShow.bind(this);
+    this.uppdateCast = this.updateCast.bind(this);
+    this.uppdateShow = this.updateShow.bind(this);
     this.state = {
       showUrl: props.location.pathname,
       show: {},
       cast: {}
     };
   }
-  componentDidMount() {
+  componentWillMount() {
     this.updateShow();
     this.updateCast();
   }
   updateShow() {
-    // axios.get(`http://api.tvmaze.com${this.state.showUrl}`)
-    //   .then(res => this.setState({ show: res.data }))
-    //   .catch(err => {
-    //     this.setState({ errors: err }, () => console.log(this.state));
-    //   });
     this.getShow(this.state.showUrl, res => {
+      console.log(res);
       res.error ?
         console.log("Show url not recognised") :
         this.setState({ show: res });
     });
   }
   updateCast() {
-    // axios.get(`http://api.tvmaze.com${this.state.showUrl}/crew`)
-    //   .then(res => this.setState({ cast: res.data }))
-    //   .catch(err => {
-    //     this.setState({ errors: err }, () => console.log(this.state));
-    //   });
       this.getCastByShow(this.state.showUrl, res => {
+        console.log(res);
         res.error ?
           console.log("Show url not recognised") :
-          this.setState({ show: res });
+          this.setState({ cast: res });
       });
   }
   render() {

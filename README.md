@@ -30,6 +30,7 @@ Tech test - Consume the tvmaze API using React
 - Monday 8th - 2 hours.
 - Tuesday 9th - 1 hour.
 - Wednesday 10th - 4 hours.
+- Thursday 11th - 2 hours.
 
 ### Tools used
 - Atom
@@ -75,3 +76,9 @@ Displayed in a list, had trouble with state management, but I was overcomplicati
 Created the common component ListItem to be reused.
 
 Created a page to show a single show, makes a new request.
+
+**Thursday 11th**
+
+Added two filters on shedule page.
+
+Cleaned up a bunch of stuff, fixed a few mistakes.
