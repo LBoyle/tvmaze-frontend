@@ -77,9 +77,3 @@ class ListItemEp extends React.Component {
 }
 
 export default ListItemEp;
-
-// <div className="three columns">{
-//   this.state.episode.show.image ?
-//     <img src={ this.state.episode.show.image.medium } alt={ this.state.episode.name }></img> :
-//     <p>No image provided</p>
-// }</div>

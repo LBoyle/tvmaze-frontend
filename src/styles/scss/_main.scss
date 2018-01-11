@@ -17,15 +17,16 @@ html, body, #root, .App {
   min-height: 100vh;
   background-color: grey;
   position: fixed;
+  ul {
+    list-style-type: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+  }
 }
-.Nav ul {
-  list-style-type: none;
-}
-.Nav a {
-  color: white;
-  text-decoration: none;
-  width: 100%;
-}
+
 #mobile-nav, #mobile-nav-items, #filters-box {
   display: none;
 }
@@ -54,6 +55,10 @@ html, body, #root, .App {
     clear: both;
     margin: 0;
   }
+  #filter-time, #filter-name, #date-field {
+    margin-right: 0;
+    margin-left: 0 !important; 
+  }
   #desktop-nav {
     display: none;
   }
@@ -65,13 +70,8 @@ html, body, #root, .App {
   .Nav, .Main {
     padding: 1em;
   }
-  .Nav {
 
-  }
-  .Main {
-
-  }
-  div#app.App nav#nav-container.Nav #mobile-nav-items {
+  #mobile-nav-items {
     display: none;
   }
 }

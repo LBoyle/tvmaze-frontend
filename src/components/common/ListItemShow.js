@@ -1,5 +1,4 @@
 import React from 'react';
-import { deleteFavouriteShow } from '../../actions/manageFavouriteShows';
 import getShow from '../../actions/getShow';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +10,6 @@ class ListItemShow extends React.Component {
     this.getShow = getShow.bind(this);
     // internal
     this.clickHandler = this.clickHandler.bind(this);
-    // this.deleteFavShow = this.deleteFavShow.bind(this);
     this.updateShow = this.updateShow.bind(this);
     this.state = {
       isOpen: false,
@@ -35,9 +33,6 @@ class ListItemShow extends React.Component {
       target.style.display = this.state.isOpen ? 'block' : 'none';
     });
   }
-  // deleteFavShow(e) {
-  //   deleteFavouriteShow(e.target.value);
-  // }
   render() {
     return (
       <div className="listItem container">
@@ -66,11 +61,3 @@ class ListItemShow extends React.Component {
 }
 
 export default ListItemShow;
-
-// <div className="nine columns">
-//   <h5>
-//     <Link to={`/shows/${this.state.item.show.id}`}>
-//       { this.state.item.show.name }
-//     </Link>
-//   </h5>
-// </div>

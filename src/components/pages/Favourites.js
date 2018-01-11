@@ -1,7 +1,6 @@
 import React from 'react';
 import { getFavouriteShows, deleteFavouriteShow } from '../../actions/manageFavouriteShows';
 import { getFavouriteEpisodes, deleteFavouriteEpisode } from '../../actions/manageFavouriteEps';
-import getEpisode from '../../actions/getEpisode';
 import ListItemShow from '../common/ListItemShow';
 import ListItemEp from '../common/ListItemEp';
 
@@ -34,10 +33,12 @@ class Favourites extends React.Component {
       this.state.favShows.data.map(show => {
         return <ListItemShow show={ show } key={ show } delHandler={ this.showDelHandler } />;
       }) : <li>No Favourite Shows</li>;
+
     const favEpisodes = this.state.favEps.data ?
       this.state.favEps.data.map(episode => {
         return <ListItemEp episode={ episode } key={ episode } delHandler={ this.epDelHandler } parent="favs" />;
       }) : <li>No Favourite Episodes</li>;
+
     return (
       <div className="Favourites">
 

@@ -66,6 +66,7 @@ class Home extends React.Component {
             <input
               className="four columns"
               name="date"
+              id="date-field"
               type="text"
               placeholder="ISO Date yyyy-mm-dd"
               value={ this.state.date }
@@ -90,7 +91,7 @@ class Home extends React.Component {
         <div className="row" id="filters-box">
           <input
             className="four columns"
-            id="filterName"
+            id="filter-name"
             name="filterName"
             type="text"
             placeholder="Name of show"
@@ -98,7 +99,7 @@ class Home extends React.Component {
             onChange={ this.onChange } />
           <input
             className="four columns"
-            id="filterTime"
+            id="filter-time"
             name="filterTime"
             type="text"
             placeholder="Airtime hh:mm"
