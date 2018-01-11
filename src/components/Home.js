@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import getSchedule from '../actions/getSchedule';
 
 import ListItem from './common/ListItem';
 
@@ -9,8 +10,8 @@ class Home extends React.Component {
 
     this.onChange = this.onChange.bind(this);
     this.searchCustomDate = this.searchCustomDate.bind(this);
-    this.getTodaySchedule = this.getTodaySchedule.bind(this);
     this.openFilters = this.openFilters.bind(this);
+    this.getSchedule = getSchedule.bind(this);
     this.state = {
       date: this.makeDate(),
       data: [],
@@ -21,22 +22,16 @@ class Home extends React.Component {
     const d = new Date();
     return `${d.getFullYear()}-${d.getMonth()+1 > 9 ? d.getMonth()+1 : '0'+(d.getMonth()+1).toString()}-${d.getDate()}`;
   }
-  componentWillMount() {
-    this.getTodaySchedule();
-  }
-  getTodaySchedule(date = this.state.date) {
-    axios.get(`http://api.tvmaze.com/schedule?country=US&date=${date}`)
-      .then(res => {
-        return res.data.map(item => <ListItem item={ item } key={ item.id } />);
-      })
-      .then(items => this.setState({ data: items }))
-      .catch(err => {
-        this.setState({ errors: err }, () => console.log(this.state));
-      });
+  componentDidMount() {
+    this.getSchedule(this.state.date, data => {
+      this.setState({ data: data.map(item => <ListItem item={ item } key={ item.id } />) });
+    });
   }
   searchCustomDate(e) {
     e.preventDefault();
-    this.getTodaySchedule();
+    this.getSchedule(this.state.date, data => {
+      this.setState({ data: data.map(item => <ListItem item={ item } key={ item.id } />) });
+    });
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
