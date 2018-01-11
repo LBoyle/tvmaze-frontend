@@ -1,5 +1,5 @@
 import React from 'react';
-import { deleteFavouriteShow } from '../../actions/manageFavourites';
+import { deleteFavouriteShow } from '../../actions/manageFavouriteShows';
 import getShow from '../../actions/getShow';
 import { Link } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ class ListItemShow extends React.Component {
     this.updateShow();
   }
   updateShow() {
-    this.getShow(`/shows/${this.state.showId}`, res => {
+    this.getShow((this.state.show.id ? this.state.show.id : this.state.showId), res => {
       res.error ?
         console.log("Show url not recognised") :
         this.setState({ show: res });
@@ -51,7 +51,7 @@ class ListItemShow extends React.Component {
               <p>No image provided</p>
           }</div>
           <div className="three columns">
-            <button value={this.state.show} onClick={ this.deleteFavShow }>Remove</button><br />
+            <button value={this.state.show.id} onClick={ this.deleteFavShow }>Remove</button><br />
             <Link to={`/shows/${this.state.show.id}`}>
               { this.state.show.name }
             </Link>

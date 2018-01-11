@@ -37,7 +37,7 @@ class Home extends React.Component {
     this.getSchedule(this.state.date, data => {
       data.error ?
         console.log("Date not recognised") :
-        this.setState({ data: data.map(item => <ListItemEp episode={ item } key={ item.id } />) });
+        this.setState({ data: data.map(item => <ListItemEp episode={ item } key={ item.id } parent="home" />) });
     });
   }
   onChange(e) {

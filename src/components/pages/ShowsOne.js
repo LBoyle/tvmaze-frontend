@@ -2,7 +2,7 @@ import React from 'react';
 import getShow from '../../actions/getShow';
 import getCastByShow from '../../actions/getCastByShow';
 
-import { addToFavouriteShows } from '../../actions/manageFavourites';
+import { addToFavouriteShows } from '../../actions/manageFavouriteShows';
 
 class ShowsOne extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class ShowsOne extends React.Component {
     // internal
     this.uppdateCast = this.updateCast.bind(this);
     this.uppdateShow = this.updateShow.bind(this);
-    this.addFavourite = this.addFavourite.bind(this);
+    this.addFavouriteShow = this.addFavouriteShow.bind(this);
     this.state = {
       showUrl: props.location.pathname,
       show: {},
@@ -25,20 +25,20 @@ class ShowsOne extends React.Component {
     this.updateCast();
   }
   updateShow() {
-    this.getShow(this.state.showUrl, res => {
+    this.getShow(this.state.showUrl.split('/')[2], res => {
       res.error ?
         console.log("Show url not recognised") :
         this.setState({ show: res });
     });
   }
   updateCast() {
-      this.getCastByShow(this.state.showUrl, res => {
+      this.getCastByShow(this.state.showUrl.split('/')[2], res => {
           res.error ?
           console.log("Show url not recognised") :
           this.setState({ cast: res });
       });
   }
-  addFavourite() {
+  addFavouriteShow() {
     addToFavouriteShows(this.state.showUrl.split('/')[2]);
   }
   render() {
@@ -92,7 +92,7 @@ class ShowsOne extends React.Component {
         </div>
 
         <div className="row">
-          <button onClick={ this.addFavourite }>Favourite Show</button>
+          <button onClick={ this.addFavouriteShow }>Favourite Show</button>
         </div>
 
       </div>
