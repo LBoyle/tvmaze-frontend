@@ -1,32 +1,46 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import getShow from '../actions/getShow';
+import getCastByShow from '../actions/getCastByShow';
 
 class ShowsOne extends React.Component {
   constructor(props) {
     super(props);
 
+    this.getShow = getShow.bind(this);
+    this.getCastByShow = getCastByShow.bind(this);
     this.state = {
       showUrl: props.location.pathname,
       show: {},
       cast: {}
     };
   }
-  componentWillMount() {
-    this.getShow();
-    this.getCast();
+  componentDidMount() {
+    this.updateShow();
+    this.updateCast();
   }
-  getShow() {
-    axios.get(`http://api.tvmaze.com${this.state.showUrl}`)
-      .then(res => this.setState({ show: res.data }))
-      .catch(err => {
-        this.setState({ errors: err }, () => console.log(this.state));
-      });
+  updateShow() {
+    // axios.get(`http://api.tvmaze.com${this.state.showUrl}`)
+    //   .then(res => this.setState({ show: res.data }))
+    //   .catch(err => {
+    //     this.setState({ errors: err }, () => console.log(this.state));
+    //   });
+    this.getShow(this.state.showUrl, res => {
+      res.error ?
+        console.log("Show url not recognised") :
+        this.setState({ show: res });
+    });
   }
-  getCast() {
-    axios.get(`http://api.tvmaze.com${this.state.showUrl}/crew`)
-      .then(res => this.setState({ cast: res.data }))
-      .catch(err => {
-        this.setState({ errors: err }, () => console.log(this.state));
+  updateCast() {
+    // axios.get(`http://api.tvmaze.com${this.state.showUrl}/crew`)
+    //   .then(res => this.setState({ cast: res.data }))
+    //   .catch(err => {
+    //     this.setState({ errors: err }, () => console.log(this.state));
+    //   });
+      this.getCastByShow(this.state.showUrl, res => {
+        res.error ?
+          console.log("Show url not recognised") :
+          this.setState({ show: res });
       });
   }
   render() {

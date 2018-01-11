@@ -15,7 +15,8 @@ class Home extends React.Component {
     this.state = {
       date: this.makeDate(),
       data: [],
-      errors: {}
+      errors: {},
+      filters: {}
     };
   }
   makeDate() {
@@ -23,21 +24,25 @@ class Home extends React.Component {
     return `${d.getFullYear()}-${d.getMonth()+1 > 9 ? d.getMonth()+1 : '0'+(d.getMonth()+1).toString()}-${d.getDate()}`;
   }
   componentDidMount() {
-    this.getSchedule(this.state.date, data => {
-      this.setState({ data: data.map(item => <ListItem item={ item } key={ item.id } />) });
-    });
+    this.updateSchedule();
   }
   searchCustomDate(e) {
     e.preventDefault();
+    this.updateSchedule();
+  }
+  updateSchedule() {
+    // will need to validate the date here before sending a request
     this.getSchedule(this.state.date, data => {
-      this.setState({ data: data.map(item => <ListItem item={ item } key={ item.id } />) });
+      data.error ?
+        console.log("Date not recognised") :
+        this.setState({ data: data.map(item => <ListItem item={ item } key={ item.id } />) });
     });
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
   openFilters() {
-
+    console.log('not done yet');
   }
   render() {
     return (
