@@ -47,7 +47,9 @@ Unfortunately heroku has blocked the tvmaze api because it doesn't use https. I 
 - Thursday 11th - 5 hours.
 
 ### Notes
-- I installed heroku-cli in the project and run it with a yarn script, Ubuntu security prevented me from installing it globally, so ```yarn heroku [some command]```
+- I installed heroku-cli in the project and run it with a yarn script, Ubuntu security prevented me from installing it globally, so ```yarn heroku [some command]```.
+- I ran the css libs through sass to minify them into the React project, then react-scripts uses the minified css.
+
 
 ## Development Chonology
 
