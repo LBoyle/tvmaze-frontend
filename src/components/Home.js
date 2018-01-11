@@ -16,7 +16,7 @@ class Home extends React.Component {
       date: this.makeDate(),
       data: [],
       errors: {},
-      filters: {}
+      filterName: ''
     };
   }
   makeDate() {
@@ -45,22 +45,27 @@ class Home extends React.Component {
     console.log('not done yet');
   }
   render() {
+    let filteredResults = this.state.data.filter(item => {
+        return item.props.item.show.name.toLowerCase().indexOf(this.state.filterName.toLowerCase()) !== -1;
+      });
     return (
       <div className="Home">
         <h3>Schedule</h3>
         <form className="row" onSubmit={ this.searchCustomDate }>
           <div className="u-full-width">
-            <input className="four columns" name="date" type="text" placeholder="yyyy-mm-dd" value={this.state.date} onChange={this.onChange} style={{marginRight: '1em'}} />
+            <input className="four columns" name="date" type="text" placeholder="yyyy-mm-dd" value={ this.state.date } onChange={ this.onChange } style={{marginRight: '1em'}} />
           </div>
           <div>
             <input className="two columns" type="submit" value="Search" style={{marginRight: '1em'}} />
           </div>
           <div>
-            <button className="two columns" onClick={this.openFilters}>Filters</button>
+            <button className="two columns" onClick={ this.openFilters }>Filters</button>
           </div>
         </form>
-        <div id="filters-box"></div>
-        <div id="res-list">{ this.state.data }</div>
+        <div className="row" id="filters-box">
+          <input className="four columns" id="filterName" name="filterName" type="text" placeholder="Name of show" value={ this.state.filterName } onChange={ this.onChange } />
+        </div>
+        <div className="row" id="res-list">{ filteredResults }</div>
       </div>
     );
   }
