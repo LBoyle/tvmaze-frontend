@@ -30,7 +30,7 @@ Tech test - Consume the tvmaze API using React
 - Monday 8th - 2 hours.
 - Tuesday 9th - 1 hour.
 - Wednesday 10th - 4 hours.
-- Thursday 11th - 3 hours.
+- Thursday 11th - 5 hours.
 
 ### Techs used
 - React
@@ -65,4 +65,5 @@ Tech test - Consume the tvmaze API using React
 - Don't need prop-types so far.
 - Made favourites page, stored favourite shows in localStorage using JSON.stringify().
 - Reorganized component library. Next I'll add favourite episodes.
-- Can't refresh after delete item from favourites, working on it. 
+- Can't refresh after delete item from favourites - edit: fixed it.
+- Worked on styling consistency a little. 
