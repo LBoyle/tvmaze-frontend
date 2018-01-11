@@ -8,7 +8,8 @@
     "eject": "react-scripts eject",
     "sass": "node-sass src/styles/scss/index.scss --output src/styles/css --source-map-embed --source-map-contents --output-style compressed",
     "sass:watch": "yarn sass --watch",
-    "heroku": "./node_modules/heroku-cli/bin/run"
+    "heroku": "./node_modules/heroku-cli/bin/run",
+    "prod": "./node_modules/.bin/forever -m 5 index.js"
   },
   "dependencies": {
     "axios": "^0.17.1",

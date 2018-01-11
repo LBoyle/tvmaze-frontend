@@ -8,4 +8,4 @@ app.use(express.static(dest));
 
 app.get('/*', (req, res) => res.sendFile(`${dest}/index.html`));
 
-app.listen(PORT);
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

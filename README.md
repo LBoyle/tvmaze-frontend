@@ -1,6 +1,11 @@
 # tvmaze-frontend
 Tech test - Consume the tvmaze API using React
 
+### Heroku
+https://tvmaze-frontend.herokuapp.com/
+
+Unfortunately heroku has blocked the tvmaze api because it doesn't use https. I recommend you clone the repo and run it locally to see it working.
+
 ### Setup
 - Clone repo
 - yarn is recommended  ```npm install -g yarn```
@@ -12,7 +17,8 @@ Tech test - Consume the tvmaze API using React
 ### Build for prod
 - Run ```yarn sass``` first to compile sass
 - Run ```yarn build``` to package the whole thing
-- I use http-server from npm to test prod build ```http-server build```
+- I was using http-server from npm to test prod build ```http-server build```
+- Now I've set up ```yarn prod``` to deploy the same way I would on Heroku
 
 ```
 
@@ -21,7 +27,8 @@ Tech test - Consume the tvmaze API using React
   "build": "react-scripts build",
   "eject": "react-scripts eject",
   "sass": "node-sass src/styles/scss/*.scss --output src/styles/css --source-map-embed --source-map-contents --output-style compressed",
-  "sass:watch": "yarn sass --watch"
+  "sass:watch": "yarn sass --watch",
+  "prod": "./node_module/.bin/forever -m 5 index.js"
 }
 
 ```
@@ -66,4 +73,4 @@ Tech test - Consume the tvmaze API using React
 - Made favourites page, stored favourite shows in localStorage using JSON.stringify().
 - Reorganized component library. Next I'll add favourite episodes.
 - Can't refresh after delete item from favourites - edit: fixed it.
-- Worked on styling consistency a little. 
+- Worked on styling consistency a little.
