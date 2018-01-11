@@ -2884,7 +2884,7 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
-express@^4.13.3:
+express@^4.13.3, express@^4.16.2:
   version "4.16.2"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.2.tgz#e35c6dfe2d64b7dca0a5cd4f21781be3299e076c"
   dependencies:
@@ -4601,11 +4601,7 @@ is-resolvable@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.0.1.tgz#acca1cd36dbe44b974b924321555a70ba03b1cf4"
 
-is-retry-allowed@^1.0.0, is-retry-allowed@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/is-retry-allowed/-/is-retry-allowed-1.1.0.tgz#11a060568b67339444033d0125a61a20d564fb34"
-
-"is-retry-allowed@git+https://github.com/heroku/is-retry-allowed":
+is-retry-allowed@^1.0.0, is-retry-allowed@^1.1.0, "is-retry-allowed@git+https://github.com/heroku/is-retry-allowed":
   version "1.1.0"
   resolved "git+https://github.com/heroku/is-retry-allowed#284f31a302956898b3caf78cff76b76d2a007f6d"
 
