@@ -4,20 +4,16 @@ import NavigationBar from './components/NavigationBar';
 import Home from './components/Home';
 import ShowsOne from './components/ShowsOne';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <NavigationBar />
-        <div className="Main">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/shows/:id" component={ShowsOne} />
-          </Switch>
-        </div>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <NavigationBar />
+    <div className="Main">
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/shows/:id" component={ShowsOne} />
+      </Switch>
+    </div>
+  </div>
+);
 
 export default App;
