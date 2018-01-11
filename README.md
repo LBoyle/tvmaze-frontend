@@ -32,12 +32,6 @@ Tech test - Consume the tvmaze API using React
 - Wednesday 10th - 4 hours.
 - Thursday 11th - 3 hours.
 
-### Tools used
-- Atom
-- Insomnia REST client
-- Will try the chrome extensions
-- ZSH
-
 ### Techs used
 - React
 - react-router-dom and history
