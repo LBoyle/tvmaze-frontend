@@ -30,7 +30,7 @@ Tech test - Consume the tvmaze API using React
 - Monday 8th - 2 hours.
 - Tuesday 9th - 1 hour.
 - Wednesday 10th - 4 hours.
-- Thursday 11th - 2 hours.
+- Thursday 11th - 3 hours.
 
 ### Tools used
 - Atom
@@ -82,3 +82,9 @@ Created a page to show a single show, makes a new request.
 Added two filters on shedule page.
 
 Cleaned up a bunch of stuff, fixed a few mistakes.
+
+Don't need prop-types so far.
+
+Made favourites page, stored favourite shows in localStorage using JSON.stringify().
+
+Reorganized component library. Next I'll add favourite episodes.

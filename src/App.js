@@ -1,8 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import NavigationBar from './components/NavigationBar';
-import Home from './components/Home';
-import ShowsOne from './components/ShowsOne';
+import NavigationBar from './components/common/NavigationBar';
+import Home from './components/pages/Home';
+import ShowsOne from './components/pages/ShowsOne';
+import Favourites from './components/pages/Favourites';
 
 const App = () => (
   <div className="App">
@@ -11,6 +12,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/shows/:id" component={ShowsOne} />
+        <Route exact path="/favourites" component={Favourites} />
       </Switch>
     </div>
   </div>

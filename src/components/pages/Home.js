@@ -1,7 +1,7 @@
 import React from 'react';
-import getSchedule from '../actions/getSchedule';
+import getSchedule from '../../actions/getSchedule';
 
-import ListItem from './common/ListItem';
+import ListItemEp from '../common/ListItemEp';
 
 class Home extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class Home extends React.Component {
     this.getSchedule(this.state.date, data => {
       data.error ?
         console.log("Date not recognised") :
-        this.setState({ data: data.map(item => <ListItem item={ item } key={ item.id } />) });
+        this.setState({ data: data.map(item => <ListItemEp episode={ item } key={ item.id } />) });
     });
   }
   onChange(e) {
@@ -51,10 +51,10 @@ class Home extends React.Component {
   render() {
     let filteredResults =
       this.state.data.filter(item => {
-        return item.props.item.show.name.toLowerCase()
+        return item.props.episode.show.name.toLowerCase()
           .indexOf(this.state.filterName.toLowerCase()) !== -1;
       }).filter(item => {
-        return item.props.item.airtime
+        return item.props.episode.airtime
           .indexOf(this.state.filterTime) !== -1;
       });
 

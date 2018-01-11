@@ -1,15 +1,19 @@
 import React from 'react';
-import getShow from '../actions/getShow';
-import getCastByShow from '../actions/getCastByShow';
+import getShow from '../../actions/getShow';
+import getCastByShow from '../../actions/getCastByShow';
+
+import { addToFavouriteShows } from '../../actions/manageFavourites';
 
 class ShowsOne extends React.Component {
   constructor(props) {
     super(props);
-
+    // external
     this.getShow = getShow.bind(this);
     this.getCastByShow = getCastByShow.bind(this);
+    // internal
     this.uppdateCast = this.updateCast.bind(this);
     this.uppdateShow = this.updateShow.bind(this);
+    this.addFavourite = this.addFavourite.bind(this);
     this.state = {
       showUrl: props.location.pathname,
       show: {},
@@ -22,7 +26,6 @@ class ShowsOne extends React.Component {
   }
   updateShow() {
     this.getShow(this.state.showUrl, res => {
-      console.log(res);
       res.error ?
         console.log("Show url not recognised") :
         this.setState({ show: res });
@@ -30,11 +33,13 @@ class ShowsOne extends React.Component {
   }
   updateCast() {
       this.getCastByShow(this.state.showUrl, res => {
-        console.log(res);
-        res.error ?
+          res.error ?
           console.log("Show url not recognised") :
           this.setState({ cast: res });
       });
+  }
+  addFavourite() {
+    addToFavouriteShows(this.state.showUrl.split('/')[2]);
   }
   render() {
     const show = this.state.show;
@@ -84,6 +89,10 @@ class ShowsOne extends React.Component {
                 null
             }
           </div>
+        </div>
+
+        <div className="row">
+          <button onClick={ this.addFavourite }>Favourite Show</button>
         </div>
 
       </div>

@@ -26,12 +26,14 @@ class NavigationBar extends React.Component {
       <nav className="Nav" id="nav-container">
         <ul id="desktop-nav">
           <li><Link to='/'>Home</Link></li>
+          <li><Link to='/favourites'>Favourites</Link></li>
         </ul>
         <ul id="mobile-nav">
           <li><a href="javascript:void(0);" onClick={this.clickMenu}>Menu</a></li>
         </ul>
         <ul id="mobile-nav-items">
           <li><Link to='/'>Home</Link></li>
+          <li><Link to='/favourites'>Favourites</Link></li>
         </ul>
       </nav>
     );
