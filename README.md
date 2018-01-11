@@ -42,43 +42,26 @@ Tech test - Consume the tvmaze API using React
 ## Development Chonology
 
 **Monday 8th**
-
-Used create-react-app to start a project.
-
-Import normalize and skeleton.
-
-Using react-router-dom and history.
-
-Skeleton doesn't have a navbar so I'll have to make one, and responsive.
-
-Just two main views for now.
-
-Planning, examining the json data, drawing component trees.
+- Used create-react-app to start a project.
+- Import normalize and skeleton.
+- Using react-router-dom and history.
+- Skeleton doesn't have a navbar so I'll have to make one, and responsive.
+- Just two main views for now.
+- Planning, examining the json data, drawing component trees.
 
 **Tuesday 9th**
-
-Made basic somewhat responsive navbar.
-
-Installed and setup node-sass for watch.
+- Made basic somewhat responsive navbar.
+- Installed and setup node-sass for watch.
 
 **Wednesday 10th**
-
-Made request using axios and promise chain.
-
-Displayed in a list, had trouble with state management, but I was overcomplicating it.
-
-Created the common component ListItem to be reused.
-
-Created a page to show a single show, makes a new request.
+- Made request using axios and promise chain.
+- Displayed in a list, had trouble with state management, but I was overcomplicating it.
+- Created the common component ListItem to be reused.
+- Created a page to show a single show, makes a new request.
 
 **Thursday 11th**
-
-Added two filters on shedule page.
-
-Cleaned up a bunch of stuff, fixed a few mistakes.
-
-Don't need prop-types so far.
-
-Made favourites page, stored favourite shows in localStorage using JSON.stringify().
-
-Reorganized component library. Next I'll add favourite episodes.
+- Added two filters on shedule page.
+- Cleaned up a bunch of stuff, fixed a few mistakes.
+- Don't need prop-types so far.
+- Made favourites page, stored favourite shows in localStorage using JSON.stringify().
+- Reorganized component library. Next I'll add favourite episodes.
