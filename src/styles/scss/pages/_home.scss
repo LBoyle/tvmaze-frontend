@@ -1,0 +1,52 @@
+.Main .Home {
+  .searchInput.columns {
+    width: 30.6666666667%;
+    margin-right: 1em;
+    margin-left: 0;
+  }
+  .searchBtn.columns, .filterBtn.columns {
+    width: 13.3333333333%;
+    margin-right: 1em;
+    margin-left: 0;
+  }
+  #res-list {
+    .listItem {
+      .row {
+        .imgBox.columns {
+          width: 22%;
+        }
+        .descBox.columns {
+          width: 65.3333333333%;
+          margin-left: 8.66666666667%;
+        }
+      }
+    }
+  }
+} // Home
+
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .Main .Home {
+    .searchInput.columns {
+      width: 100%;
+    }
+    .searchBtn.columns, .filterBtn.columns {
+      width: 47%;
+      margin-right: 0;
+    }
+    .filterBtn.columns {
+      float: right;
+    }
+  } // Home
+} // mobile portrait
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .Main .Home {
+    .searchInput.columns {
+      width: 47%;
+    }
+    .searchBtn.columns, .filterBtn.columns {
+      width: 22.4%;
+    }
+  } // Home
+} // mobile landscape

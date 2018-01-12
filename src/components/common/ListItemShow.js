@@ -20,6 +20,9 @@ class ListItemShow extends React.Component {
   componentWillMount() {
     this.updateShow();
   }
+  componentDidMount() {
+    this.detailsBox = document.getElementById(this.state.show.id ? this.state.show.id : this.state.showId);
+  }
   updateShow() {
     this.getShow((this.state.show.id ? this.state.show.id : this.state.showId), res => {
       res.error ?
@@ -28,25 +31,25 @@ class ListItemShow extends React.Component {
     });
   }
   clickHandler(e) {
-    const target = e.target.nextSibling;
     this.setState({ isOpen: !this.state.isOpen }, () => {
-      target.style.display = this.state.isOpen ? 'block' : 'none';
+      this.detailsBox.classList.toggle('hide');
     });
   }
   render() {
     return (
-      <div className="listItem container">
+      <li className="listItem container">
         { this.state.show.name }&nbsp;-&nbsp;
         <button onClick={ this.clickHandler}>{ this.state.isOpen ? 'Hide' : 'Show' }</button>
 
-        <div className="row" style={{display: 'none'}}>
-          <div className="three columns">{
+        <div className="row hide" id={ this.state.show.id ? this.state.show.id : this.state.showId }>
+
+          <div className="imgBox columns">{
             this.state.show.image ?
               <img src={ this.state.show.image.medium } alt={ this.state.show.name }></img> :
               <p>No image provided</p>
           }</div>
-          <div className="three columns">
-            <button value={this.state.show.id} onClick={ this.props.delHandler }>Remove</button><br />
+          <div className="descBox columns">
+            <button value={ this.state.show.id } onClick={ this.props.delHandler }>Remove</button><br />
             <Link to={`/shows/${this.state.show.id}`}>
               { this.state.show.name }
             </Link>
@@ -55,7 +58,7 @@ class ListItemShow extends React.Component {
         </div>
 
         <hr />
-      </div>
+      </li>
     );
   }
 }

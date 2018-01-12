@@ -1,0 +1,51 @@
+.Main .Favourites {
+  ul.showsList {
+    li.listItem {
+      .row {
+        .imgBox.columns {
+          width: 22%;
+        }
+        .descBox.columns {
+          width: 65.3333333333%;
+          margin-left: 8.66666666667%;
+        }
+      }
+    }
+  }
+  ul.episodesList {
+    li.listItem {
+
+    }
+  }
+} // Favourites
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .Main .Favourites {
+    ul.showsList {
+      li.listItem {
+        .row {
+          .imgBox.columns {
+            width: 48%;
+            img {
+              width: 100%;
+            }
+          }
+          .descBox.columns {
+            width: 39.3333333333%;
+          }
+        }
+      }
+    }
+    ul.episodesList {
+      li.listItem {
+
+      }
+    }
+  } // Favourites
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .Main .Favourites {
+
+  } // Favourites
+}

@@ -3,9 +3,18 @@ html, body, #root, .App {
   width: 98vw;
   margin: 0;
 }
-
 .hide {
   display: none;
+}
+
+#mobile-nav, #mobile-nav-items {
+  display: none;
+}
+.listItem {
+  list-style-type: none;
+  hr {
+    margin: 0 0 1rem 0;
+  }
 }
 
 .Nav {
@@ -24,7 +33,7 @@ html, body, #root, .App {
     text-decoration: none;
     width: 100%;
   }
-}
+} // Nav
 
 .Main {
   float: left;
@@ -33,48 +42,8 @@ html, body, #root, .App {
   width: 73vw;
   min-height: 100vh;
   margin-left: 25vw;
-  .Home {
-    .searchInput.columns {
-      width: 30.6666666667%;
-      margin-right: 1em;
-      margin-left: 0;
-    }
-    .searchBtn.columns, .filterBtn.columns {
-      width: 13.3333333333%;
-      margin-right: 1em;
-      margin-left: 0;
-    }
-    #res-list { // row
-      .listItem {
-        .row {
-          .imgBox.columns {
-            width: 22%;
-          }
-          .descBox.columns {
-            width: 65.3333333333%;
-            margin-left: 8.66666666667%;
-          }
-        }
-      }
-    }
-  }
-  .Show {
 
-  }
-  .Favourites {
-
-  }
-}
-
-#mobile-nav, #mobile-nav-items {
-  display: none;
-}
-.listItem {
-  list-style-type: none;
-  hr {
-    margin: 0 0 1rem 0;
-  }
-}
+} // Main
 
 @media (max-width: 600px) and (orientation: portrait) {
   html, body, #root, .App {
@@ -93,19 +62,8 @@ html, body, #root, .App {
     min-height: 90vh;
     clear: both;
     margin: 0;
-    .Home {
-      .searchInput.columns {
-        width: 100%;
-      }
-      .searchBtn.columns, .filterBtn.columns {
-        width: 47%;
-        margin-right: 0;
-      }
-      .filterBtn.columns {
-        float: right;
-      }
-    }
-  }
+
+  } // Main
   #desktop-nav {
     display: none;
   }
@@ -122,17 +80,14 @@ html, body, #root, .App {
     padding: 1em;
   }
   .Main {
-    .Home {
-      .searchInput.columns {
-        width: 47%;
-      }
-      .searchBtn.columns, .filterBtn.columns {
-        width: 22.4%;
-      }
-    }
-  }
+
+  } // Main
 
   #mobile-nav-items {
     display: none;
   }
 }
+
+@import 'pages/home';
+@import 'pages/favourites';
+@import 'pages/show';

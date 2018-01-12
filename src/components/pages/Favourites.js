@@ -43,10 +43,10 @@ class Favourites extends React.Component {
       <div className="Favourites">
 
         <h3>Shows</h3>
-        <ul>{ favShows }</ul>
+        <ul className="showsList">{ favShows }</ul>
 
         <h3>Episodes</h3>
-        <ul>{ favEpisodes }</ul>
+        <ul className="episodesList">{ favEpisodes }</ul>
 
       </div>
     );
