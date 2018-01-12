@@ -74,5 +74,8 @@ Unfortunately heroku has blocked the tvmaze api because it doesn't use https. I 
 - Can't refresh after delete item from favourites - edit: fixed it.
 - Worked on styling consistency a little.
 
-**Friday 12th** - 2 hours so far
+**Friday 12th** - 3 hours.
 - Beginning css refactor, search fields on Homepage done.
+- Refactored css more.
+
+Emailed Dan to submit.
