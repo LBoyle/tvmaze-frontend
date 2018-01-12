@@ -8,12 +8,14 @@
     "eject": "react-scripts eject",
     "sass": "node-sass src/styles/scss/index.scss --output src/styles/css --output-style compressed",
     "sass:watch": "yarn sass --watch",
+    "heroku": "./node_modules/.bin/heroku",
     "prod": "./node_modules/.bin/forever -m 5 index.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
     "express": "^4.16.2",
     "forever": "^0.15.3",
+    "heroku-cli": "^6.15.13",
     "history": "^4.7.2",
     "node-sass": "^4.7.2",
     "react": "^16.2.0",
