@@ -79,3 +79,6 @@ Unfortunately heroku has blocked the tvmaze api because it doesn't use https. I 
 - Refactored css more.
 
 Emailed Dan to submit.
+
+### Next steps
+Implement flash-messages, which means Redux, which means changing the routing and using redux-persist instead of localStorage. A lot of work. 
