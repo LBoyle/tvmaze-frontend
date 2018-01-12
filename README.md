@@ -45,6 +45,7 @@ Unfortunately heroku has blocked the tvmaze api because it doesn't use https. I 
 - Tuesday 9th - 1 hour.
 - Wednesday 10th - 4 hours.
 - Thursday 11th - 5 hours.
+- Friday 12th - 2 hours so far.
 
 ### Notes
 - I installed heroku-cli in the project and run it with a yarn script, Ubuntu security prevented me from installing it globally, so ```yarn heroku [some command]```.
@@ -79,3 +80,6 @@ Unfortunately heroku has blocked the tvmaze api because it doesn't use https. I 
 - Reorganized component library. Next I'll add favourite episodes.
 - Can't refresh after delete item from favourites - edit: fixed it.
 - Worked on styling consistency a little.
+
+**Friday 12th**
+- Beginning css refactor, search fields on Homepage done.
