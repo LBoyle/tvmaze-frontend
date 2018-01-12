@@ -21,6 +21,9 @@ class ListItemEp extends React.Component {
   componentWillMount() {
     if(this.props.parent === 'favs') this.updateEpisode();
   }
+  componentDidMount() {
+    this.detailsBox = document.getElementById(this.state.episode.id);
+  }
   updateEpisode() {
     this.getEpisode(this.state.episode, res => {
       res.error ?
@@ -29,9 +32,8 @@ class ListItemEp extends React.Component {
     });
   }
   clickHandler(e) {
-    const target = e.target.nextSibling;
     this.setState({ isOpen: !this.state.isOpen }, () => {
-      target.style.display = this.state.isOpen ? 'block' : 'none';
+      this.detailsBox.classList.toggle('hide');
     });
   }
   addFavEpisode() {
@@ -49,15 +51,15 @@ class ListItemEp extends React.Component {
             <button onClick={ this.props.delHandler } value={ this.state.episode.id }>Remove</button>
         }
 
-        <div className="row" style={{display: 'none'}}>
+        <div className="row hide" id={ this.state.episode.id }>
 
-          <div className="three columns">{
+          <div className="imgBox columns">{
             this.state.episode.show ?
               <img src={ this.state.episode.show.image ? this.state.episode.show.image.medium : null } alt={ this.state.episode.name }></img> :
               <p>No image provided</p>
           }</div>
 
-          <div className="nine columns">
+          <div className="descBox columns">
             <button value={this.state.episode.id} onClick={ this.addFavEpisode }>Favourite</button><br />
             {
               this.state.episode.show ?

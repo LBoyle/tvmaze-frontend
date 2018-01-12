@@ -44,6 +44,19 @@ html, body, #root, .App {
       margin-right: 1em;
       margin-left: 0;
     }
+    #res-list { // row
+      .listItem {
+        .row {
+          .imgBox.columns {
+            width: 22%;
+          }
+          .descBox.columns {
+            width: 65.3333333333%;
+            margin-left: 8.66666666667%;
+          }
+        }
+      }
+    }
   }
   .Show {
 
@@ -53,7 +66,7 @@ html, body, #root, .App {
   }
 }
 
-#mobile-nav, #mobile-nav-items, #filters-box {
+#mobile-nav, #mobile-nav-items {
   display: none;
 }
 .listItem {
@@ -115,7 +128,6 @@ html, body, #root, .App {
       }
       .searchBtn.columns, .filterBtn.columns {
         width: 22.4%;
-        margin-right: 0;
       }
     }
   }

@@ -45,7 +45,7 @@ class Home extends React.Component {
   }
   openFilters() {
     this.setState({ filtersOpen: !this.state.filtersOpen }, () => {
-      this.filtersBox.style.display = this.state.filtersOpen ? 'block' : 'none';
+      this.filtersBox.classList.toggle('hide');
     });
   }
   render() {
@@ -69,20 +69,18 @@ class Home extends React.Component {
             type="text"
             placeholder="ISO Date yyyy-mm-dd"
             value={ this.state.date }
-            onChange={ this.onChange }
-            style={{marginRight: '1em'}} />
+            onChange={ this.onChange } />
           <input
             className="searchBtn columns"
             type="submit"
-            value="Search"
-            style={{marginRight: '1em'}} />
+            value="Search" />
           <button
             className="filterBtn columns"
             onClick={ this.openFilters }>
               Filters
           </button>
         </form>
-        <div className="row" id="filters-box">
+        <div className="row hide" id="filters-box">
           <input
             className="searchInput columns"
             id="filter-name"
@@ -101,7 +99,7 @@ class Home extends React.Component {
             value={ this.state.filterTime }
             onChange={ this.onChange } />
         </div>
-        <div className="row" id="res-list">{ filteredResults }</div>
+        <div id="res-list">{ filteredResults }</div>
       </div>
     );
   }
