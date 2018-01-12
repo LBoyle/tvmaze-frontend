@@ -110,14 +110,12 @@ html, body, #root, .App {
   }
   .Main {
     .Home {
-      .SearchBox {
-        .searchInput {
-          width: 100%;
-          margin-left: 0;
-        }
-        .searchBtn, .filterBtn {
-          width: 47%;
-        }
+      .searchInput.columns {
+        width: 47%;
+      }
+      .searchBtn.columns, .filterBtn.columns {
+        width: 22.4%;
+        margin-right: 0;
       }
     }
   }
