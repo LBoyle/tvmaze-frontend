@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import NavigationBar from './components/common/NavigationBar';
 import Home from './components/pages/Home';
-import ShowsOne from './components/pages/ShowsOne';
+import Show from './components/pages/Show';
 import Favourites from './components/pages/Favourites';
 
 const App = () => (
@@ -11,7 +11,7 @@ const App = () => (
     <div className="Main">
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/shows/:id" component={ShowsOne} />
+        <Route exact path="/shows/:id" component={Show} />
         <Route exact path="/favourites" component={Favourites} />
       </Switch>
     </div>

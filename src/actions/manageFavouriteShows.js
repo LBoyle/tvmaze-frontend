@@ -16,7 +16,7 @@ const addToFavouriteShows = item => {
       if(current.indexOf(item.toString()) === -1) current.push(item);
       localStorage.setItem('favouriteShows', JSON.stringify({ data: current }));
     } else {
-      console.log('No favouriteShows object');
+      console.log('No favouriteShows');
       setFavouriteShows([item]);
     }
 }
@@ -29,7 +29,7 @@ const deleteFavouriteShow = (item, c) => {
     localStorage.setItem('favouriteShows', JSON.stringify({ data: current }));
     c();
   } else {
-    console.log('No favouriteShows object');
+    console.log('No favouriteShows');
   }
 }
 

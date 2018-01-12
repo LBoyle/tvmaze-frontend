@@ -51,7 +51,7 @@ class ShowsOne extends React.Component {
       null;
 
     return (
-      <div className="container">
+      <div className="Show container">
 
         <div className="row">
           <div className="three columns">{
@@ -59,7 +59,7 @@ class ShowsOne extends React.Component {
               <img src={show.image.medium} alt={show.name}></img> :
               <p>No image provided</p>
           }</div>
-          <div className="nine columns">
+          <div className="eight columns offset-by-one">
             <h3>{ show.name }</h3>
             <div dangerouslySetInnerHTML={{ __html: show.summary }}></div>
           </div>

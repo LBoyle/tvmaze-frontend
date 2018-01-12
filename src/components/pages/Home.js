@@ -62,50 +62,44 @@ class Home extends React.Component {
       <div className="Home">
         <h3>Schedule</h3>
         <form className="row" onSubmit={ this.searchCustomDate }>
-          <div className="u-full-width">
-            <input
-              className="four columns"
-              name="date"
-              id="date-field"
-              type="text"
-              placeholder="ISO Date yyyy-mm-dd"
-              value={ this.state.date }
-              onChange={ this.onChange }
-              style={{marginRight: '1em'}} />
-          </div>
-          <div>
-            <input
-              className="two columns"
-              type="submit"
-              value="Search"
-              style={{marginRight: '1em'}} />
-          </div>
-          <div>
-            <button
-              className="two columns"
-              onClick={ this.openFilters }>
-                Filters
-            </button>
-          </div>
+          <input
+            className="searchInput columns"
+            name="date"
+            id="date-field"
+            type="text"
+            placeholder="ISO Date yyyy-mm-dd"
+            value={ this.state.date }
+            onChange={ this.onChange }
+            style={{marginRight: '1em'}} />
+          <input
+            className="searchBtn columns"
+            type="submit"
+            value="Search"
+            style={{marginRight: '1em'}} />
+          <button
+            className="filterBtn columns"
+            onClick={ this.openFilters }>
+              Filters
+          </button>
         </form>
         <div className="row" id="filters-box">
           <input
-            className="four columns"
+            className="searchInput columns"
             id="filter-name"
             name="filterName"
             type="text"
             placeholder="Name of show"
             value={ this.state.filterName }
             onChange={ this.onChange } />
+
           <input
-            className="four columns"
+            className="searchInput columns"
             id="filter-time"
             name="filterTime"
             type="text"
             placeholder="Airtime hh:mm"
             value={ this.state.filterTime }
-            onChange={ this.onChange }
-            style={{marginLeft: '1em'}} />
+            onChange={ this.onChange } />
         </div>
         <div className="row" id="res-list">{ filteredResults }</div>
       </div>
